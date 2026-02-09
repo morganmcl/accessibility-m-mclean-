@@ -24,7 +24,7 @@
 body {
   margin: 0;
   background: var(--bg);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
   color: var(--text);
   line-height: 1.6;
 }
@@ -110,15 +110,18 @@ hr {
 }
 
 
-/* ===================================
-   Contact Section
-   =================================== */
+/*CONTACT*/
 
-.contact-links {
+.contact-links{
+  max-width: none;     /* undo body > * max-width issues with it on buttons for some reason */
+  margin: 20px 0 0;    /* undo margin: 0 auto */
+  padding: 0;         
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 10px 0 25px;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 0px;
+  margin-bottom: 25px;
 }
 
 .contact-links a {
@@ -138,7 +141,16 @@ hr {
 }
 
 /* FORM */
+.contact-section {              /* rename to your real wrapper class */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.contact-section h2 {
+  width: 100%;
+  text-align: center;
+}
 .contact-form {
   background: var(--panel);
   padding: 22px;
@@ -170,11 +182,7 @@ hr {
   outline: 3px solid var(--accent);
   border-color: var(--accent-hover);
 }
-.contact-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .contact-form button {
   background: var(--accent);
   color: #fff;
